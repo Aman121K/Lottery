@@ -3,38 +3,22 @@
     border-radius: 5px;
     padding: 10px;
     width: 90%;
-    height: 350px; /* Same height for all ticket cards */
-    display: flex;
-    flex-direction: column; /* Ensure the content stacks vertically */
-    justify-content: space-between; /* Spread the content evenly */
-    align-items: center;
     text-align: center;
     margin: 20px auto;
-    box-sizing: border-box; /* Include padding and border in the height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 .ticket-image {
     width: 100%;
-    height: 150px; /* Ensure a consistent height for all images */
-    object-fit: cover; /* Maintain the aspect ratio and cover the area */
+    height: auto;
+    cursor: pointer; /* Make the image look clickable */
 }
 
 .ticket-info {
-    flex-grow: 1; /* This will allow the info to grow and maintain the height */
     margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.ticket-name {
-    display: -webkit-box;
-    -webkit-line-clamp: 2; /* Limit the text to two lines */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    line-height: 1.2em; /* Adjust line height to control the spacing */
-    max-height: 2.4em; /* 2 lines of text with the given line height */
 }
 
 .ticket-price {
@@ -53,11 +37,50 @@
     margin-top: 10px;
 }
 
-/* Desktop styles */
-@media (min-width: 768px) {
+/* Modal styles */
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain; /* Ensures the image fits within the modal */
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Mobile-friendly adjustments */
+@media (max-width: 768px) {
     .ticket-card {
-        width: 200px; /* Fixed width for desktop */
-        height: 350px; /* Ensure fixed height across all ticket cards */
-        margin: 20px;
+        width: 100%; /* Full width on smaller screens */
+        margin: 10px auto;
+    }
+
+    .ticket-image {
+        max-height: 250px; /* Prevent the image from being cut off */
+        object-fit: cover; /* Ensure the image covers the available space */
+    }
+
+    .modal-image {
+        max-width: 95%;
+        max-height: 95%;
     }
 }
