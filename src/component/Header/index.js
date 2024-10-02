@@ -11,9 +11,9 @@ const Header = () => {
     <header className="header">
       <div className="header-container">
         <div className="header-left">
-          {/* Link to open WhatsApp with the user's phone number */}
+          {/* Link to open WhatsApp with pre-filled message */}
           <a
-            href="https://wa.me/919781256044"
+            href="https://wa.me/919781256044?text=Hello%20!%0AI%20wish%20to%20order%20lottery%20tickets%20from%20authorized%20lottery%20seller.%20Please%20send%20me%20more%20details."
             className="contact-number"
             target="_blank"
             rel="noopener noreferrer"
