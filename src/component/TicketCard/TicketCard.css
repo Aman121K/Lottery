@@ -1,0 +1,63 @@
+.ticket-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    width: 90%;
+    height: 350px; /* Same height for all ticket cards */
+    display: flex;
+    flex-direction: column; /* Ensure the content stacks vertically */
+    justify-content: space-between; /* Spread the content evenly */
+    align-items: center;
+    text-align: center;
+    margin: 20px auto;
+    box-sizing: border-box; /* Include padding and border in the height */
+}
+
+.ticket-image {
+    width: 100%;
+    height: 150px; /* Ensure a consistent height for all images */
+    object-fit: cover; /* Maintain the aspect ratio and cover the area */
+}
+
+.ticket-info {
+    flex-grow: 1; /* This will allow the info to grow and maintain the height */
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ticket-name {
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit the text to two lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2em; /* Adjust line height to control the spacing */
+    max-height: 2.4em; /* 2 lines of text with the given line height */
+}
+
+.ticket-price {
+    font-weight: bold;
+    color: #000;
+    margin-top: 10px;
+}
+
+.buy-ticket-button {
+    background-color: #ff4b4b;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+    .ticket-card {
+        width: 200px; /* Fixed width for desktop */
+        height: 350px; /* Ensure fixed height across all ticket cards */
+        margin: 20px;
+    }
+}

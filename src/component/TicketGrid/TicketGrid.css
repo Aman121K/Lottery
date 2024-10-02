@@ -1,0 +1,30 @@
+.ticket-grid {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .grid-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .grid-subtitle {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 20px;
+  }
+  
+  /* Use CSS Grid to display 3 items per row */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    padding: 0 20px;
+  }
+  
+  @media (min-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(3, 1fr); /* Ensure exactly 3 columns on larger screens */
+    }
+  }
